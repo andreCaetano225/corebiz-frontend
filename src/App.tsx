@@ -1,5 +1,6 @@
 import { Banner } from './components/Banner';
 import { FeaturedProduct } from './components/FeaturedProduct';
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Newsletter } from './components/Newsletter';
 import './styles/App.css';
@@ -11,6 +12,7 @@ function App() {
       <Banner />
       <FeaturedProduct />
       <Newsletter />
+      <Footer />
     </>
   );
 }
