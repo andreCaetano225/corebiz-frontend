@@ -89,7 +89,7 @@ export const Product = () => {
         }}
         loop={true}
       >
-        {data.map((item: ProductType, index) => (
+        {data.map((item: ProductType) => (
           <SwiperSlide key={item.productId}>
             <div className="featuredProduct__item">
               {item.listPrice ? (
