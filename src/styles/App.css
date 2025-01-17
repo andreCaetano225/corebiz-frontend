@@ -1,5 +1,6 @@
 @import 'swiper/css';
 @import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 *,
@@ -28,6 +29,29 @@
 
 .swiper-pagination-bullet:hover {
   opacity: 0.8;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 30px;
+  height: 40px;
+  color: white;
+}
+
+
+
+
+
+.swiper-button-next {
+  right: -20px;
+}
+
+.swiper-button-prev {
+  left: -20;
 }
 
 a {
