@@ -7,6 +7,7 @@ import { Newsletter } from './components/Newsletter';
 import './styles/App.css';
 import { ProductType } from './types/product';
 import api from './services/api';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -40,7 +41,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <CartProvider>
       <Header />
       <Banner isMobile={isMobile} />
       <FeaturedProduct
@@ -50,7 +51,7 @@ function App() {
       />
       <Newsletter />
       <Footer isMobile={isMobile} />
-    </>
+    </CartProvider>
   );
 }
 

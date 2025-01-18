@@ -5,6 +5,7 @@ import { Navigation } from 'swiper';
 import ArrowLeaft from '../../../assets/left-arrow.svg';
 import ArrowRight from '../../../assets/right-arrow.svg';
 import { ProductType } from '../../../types/product';
+import { useCartItems } from '../../../hooks/useCart';
 
 interface ProductMobile {
   products: ProductType[];
@@ -12,6 +13,8 @@ interface ProductMobile {
 }
 
 export const ProductDesktop = ({ products, loading }: ProductMobile) => {
+  const { addItemToCart } = useCartItems();
+
   const ProductLoader = () => (
     <div className="featuredProduct__item">
       <ContentLoader
@@ -83,7 +86,7 @@ export const ProductDesktop = ({ products, loading }: ProductMobile) => {
                           ''
                         )}
                       </p>
-                      <button>COMPRAR</button>
+                      <button onClick={addItemToCart}>COMPRAR</button>
                     </div>
                   </div>
                 </div>
