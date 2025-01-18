@@ -20,3 +20,11 @@ Certifique-se de ter instalado em sua máquina:
 1. **Clone o repositório**:
    ```bash
    git clone https://github.com/andreCaetano225/corebiz-frontend.git
+
+2. **Clone o repositório**:
+   ```bash
+   cd corebiz-frontend
+
+3. **Clone o repositório**:
+   ```bash
+   cd corebiz-frontend
