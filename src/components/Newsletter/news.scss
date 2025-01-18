@@ -1,17 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 .news{
     background-color: #F2F2F2;
     width: 100%;
     padding: 35px;
-
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: "Lato", serif;
+
+    h2 {
+            font-family: "Lato", serif;
+            font-weight: 700;
+            line-height: 1.5rem;
+        }
+
+    @media screen and (max-width: 48rem) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: start;
+    }
+
+    form {
+        div{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            font-family: "Lato", serif;
+
+         @media screen and (max-width: 48rem) {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+         }
+        }
+    }
 
     input {
-            border-radius: 0.3125rem;
             background: #fff;
-            width: 17.5rem;
+            width: 17rem;
             height: 3rem;
             margin-right: 0.5rem;
             padding: 0 1rem;
@@ -19,10 +47,14 @@
             color: #585858;
             font-size: 12px;
             font-weight: 700;
-    
+            border-radius: 0.31rem;
             &:focus {
                 border: 1px solid #bdbdbd;
             }
+
+    @media screen and (max-width: 48rem) {
+            width: 20rem;
+    }
         }
 
     button {
@@ -31,13 +63,16 @@
         font-weight: 700;
         width: 150px;
         transition: background-color 0.3s ease;
-        margin-top: 20px;
         border-radius: 0.3125rem;
         height: 3rem;
         transition: opacity 0.4s ease;
 
         &:hover {
             background-color: #393939;
+        }
+
+        @media screen and (max-width: 48rem) {
+            width: 20rem;
         }
     }
 }
