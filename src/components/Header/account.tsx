@@ -17,9 +17,11 @@ export const Account = () => {
 
         <div className="header__cart">
           <img src={ShoppingIcon} alt="" />
-          <div>
-            <span>{quantity}</span>
-          </div>
+          {quantity > 0 && (
+            <div>
+              <span>{quantity}</span>
+            </div>
+          )}
         </div>
       </div>
     </>

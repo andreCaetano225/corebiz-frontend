@@ -103,15 +103,19 @@
     div{
       background-color: #F8475F;
       border-radius: 100%;
-      width: 18px;
-      height: 18px;
-      color: white;
+      width: 20px;
+      height: 20px;
+      color: #FFF;
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 12px;
       margin-top: 2px;
+
+      span{
+        display: inline;
+      }
     }
   }
 }
