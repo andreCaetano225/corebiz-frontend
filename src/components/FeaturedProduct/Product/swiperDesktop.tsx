@@ -1,18 +1,20 @@
-import ContentLoader from 'react-content-loader'; // Importação do React Content Loader
+import ContentLoader from 'react-content-loader';
 import StarRating from '../Star';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import ArrowLeaft from '../../../assets/left-arrow.svg';
 import ArrowRight from '../../../assets/right-arrow.svg';
 import { ProductType } from '../../../types/product';
+import { useCartItems } from '../../../hooks/useCart';
 
 interface ProductMobile {
   products: ProductType[];
-  loading: boolean; // Adicionado um prop para indicar o estado de carregamento
+  loading: boolean;
 }
 
 export const ProductDesktop = ({ products, loading }: ProductMobile) => {
-  // Loader para um produto enquanto os dados não chegam
+  const { addItemToCart } = useCartItems();
+
   const ProductLoader = () => (
     <div className="featuredProduct__item">
       <ContentLoader
@@ -84,7 +86,7 @@ export const ProductDesktop = ({ products, loading }: ProductMobile) => {
                           ''
                         )}
                       </p>
-                      <button>COMPRAR</button>
+                      <button onClick={addItemToCart}>COMPRAR</button>
                     </div>
                   </div>
                 </div>
