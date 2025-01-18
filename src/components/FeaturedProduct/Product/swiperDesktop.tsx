@@ -1,7 +1,7 @@
 import StarRating from '../Star';
 import { ProductType } from './types';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper';
+import { Navigation } from 'swiper';
 import ArrowLeaft from '../../../assets/left-arrow.svg';
 import ArrowRight from '../../../assets/right-arrow.svg';
 
