@@ -6,8 +6,10 @@ export const Account = () => {
     <>
       <div className="header__account">
         <div>
-          <img src={IconUser} alt="" />
-          <span>Minha Conta</span>
+          <span>
+            <img src={IconUser} alt="" />
+            <span>Minha Conta</span>
+          </span>
         </div>
 
         <img src={ShoppingIcon} alt="" />
