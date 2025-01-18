@@ -1,4 +1,3 @@
-import ContentLoader from 'react-content-loader';
 import StarRating from '../Star';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
@@ -6,6 +5,7 @@ import ArrowLeaft from '../../../assets/left-arrow.svg';
 import ArrowRight from '../../../assets/right-arrow.svg';
 import { ProductType } from '../../../types/product';
 import { useCartItems } from '../../../hooks/useCart';
+import { ContentLoaderProduct } from './contentLoader';
 
 interface ProductMobile {
   products: ProductType[];
@@ -14,25 +14,6 @@ interface ProductMobile {
 
 export const ProductDesktop = ({ products, loading }: ProductMobile) => {
   const { addItemToCart } = useCartItems();
-
-  const ProductLoader = () => (
-    <div className="featuredProduct__item">
-      <ContentLoader
-        speed={2}
-        width={200}
-        height={300}
-        viewBox="0 0 200 300"
-        backgroundColor="#f3f3f3"
-        foregroundColor="#ecebeb"
-      >
-        <rect x="0" y="0" rx="10" ry="10" width="200" height="150" />
-        <rect x="0" y="160" rx="5" ry="5" width="150" height="15" />
-        <rect x="0" y="185" rx="5" ry="5" width="100" height="15" />
-        <rect x="0" y="210" rx="5" ry="5" width="120" height="15" />
-        <rect x="0" y="240" rx="5" ry="5" width="80" height="30" />
-      </ContentLoader>
-    </div>
-  );
 
   return (
     <>
@@ -47,7 +28,9 @@ export const ProductDesktop = ({ products, loading }: ProductMobile) => {
         {loading
           ? Array.from({ length: 4 }).map((_, index) => (
               <SwiperSlide key={index}>
-                <ProductLoader />
+                <div className="featuredProduct__item">
+                  <ContentLoaderProduct />
+                </div>
               </SwiperSlide>
             ))
           : products?.map((item: ProductType) => (
@@ -86,7 +69,25 @@ export const ProductDesktop = ({ products, loading }: ProductMobile) => {
                           ''
                         )}
                       </p>
-                      <button onClick={addItemToCart}>COMPRAR</button>
+                      {item.installments.length > 0 ? (
+                        <button
+                          onClick={addItemToCart}
+                          style={{
+                            marginTop: '1.5rem',
+                          }}
+                        >
+                          COMPRAR
+                        </button>
+                      ) : (
+                        <button
+                          onClick={addItemToCart}
+                          style={{
+                            marginTop: '2.6rem',
+                          }}
+                        >
+                          COMPRAR
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

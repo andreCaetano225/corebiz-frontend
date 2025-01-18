@@ -13,7 +13,7 @@ export const Product = ({ isMobile, products, loading }: ProductProps) => {
     <>
       <div>
         {isMobile ? (
-          <ProductMobile products={products} />
+          <ProductMobile products={products} loading={loading} />
         ) : (
           <ProductDesktop products={products} loading={loading} />
         )}
