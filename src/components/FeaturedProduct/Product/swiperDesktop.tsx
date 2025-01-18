@@ -1,4 +1,4 @@
-import ContentLoader from 'react-content-loader'; // Importação do React Content Loader
+import ContentLoader from 'react-content-loader';
 import StarRating from '../Star';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
@@ -8,11 +8,10 @@ import { ProductType } from '../../../types/product';
 
 interface ProductMobile {
   products: ProductType[];
-  loading: boolean; // Adicionado um prop para indicar o estado de carregamento
+  loading: boolean;
 }
 
 export const ProductDesktop = ({ products, loading }: ProductMobile) => {
-  // Loader para um produto enquanto os dados não chegam
   const ProductLoader = () => (
     <div className="featuredProduct__item">
       <ContentLoader
