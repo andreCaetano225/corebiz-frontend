@@ -23,18 +23,7 @@
     }
 
     form {
-        div{
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-            font-family: "Lato", serif;
-
-         @media screen and (max-width: 48rem) {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-         }
-        }
+        
     }
 
     input {
@@ -52,10 +41,15 @@
                 border: 1px solid #bdbdbd;
             }
 
-    @media screen and (max-width: 48rem) {
-            width: 20rem;
-    }
+            &.error {
+                border: 1px solid #d7182a;
+                border-radius: 0.31rem;
+            }
+
+        @media screen and (max-width: 48rem) {
+                width: 20rem;
         }
+    }
 
     button {
         background-color: #000;
@@ -74,5 +68,59 @@
         @media screen and (max-width: 48rem) {
             width: 20rem;
         }
+    }
+
+    &__div-form {
+
+                display: flex;
+                margin-top: 20px;
+                font-family: "Lato", serif;
+
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 5px;
+
+                    span{
+                        color: #D7182A;
+                        font-weight: 400;
+                        font-size: 12px;
+                        margin-left: 3px;
+                    }
+                }
+
+                @media screen and (max-width: 48rem) {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                }
+        
+    }
+
+    &__form-sucess{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        button {
+                background-color: #000;
+                color: #fff;
+                font-weight: 700;
+                width: 250px;
+                transition: background-color 0.3s ease;
+                border-radius: 0.3125rem;
+                height: 3rem;
+                transition: opacity 0.4s ease;
+                margin-top: 1rem;
+                &:hover {
+                    background-color: #393939;
+                }
+        
+                @media screen and (max-width: 48rem) {
+                    width: 20rem;
+                }
+            }
     }
 }
