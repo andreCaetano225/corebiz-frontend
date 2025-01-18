@@ -1,23 +1,32 @@
 import IconEmail from '../../assets/iconEmail.svg';
 import IconPhoto from '../../assets/iconPhone.svg';
 import LogoFooter from '../../assets/logoFooter.svg';
+import LogoFooterMobile from '../../assets/logoFooterMobile.svg';
 
 import './footer.scss';
 
-export const Footer = () => {
+interface FooterProps {
+  isMobile: boolean;
+}
+
+export const Footer = ({ isMobile }: FooterProps) => {
   return (
     <>
       <footer className="footer">
         <div className="footer__container">
           <div className="footer__div_contact">
-            <button>
-              <img src={IconEmail} alt="" />
-              ENTRE EM CONTATO
-            </button>
-            <button>
-              <img src={IconPhoto} alt="" />
-              FALE COM O NOSSO CONSULTOR ONLINE
-            </button>
+            {isMobile ? null : (
+              <>
+                <button>
+                  <img src={IconEmail} alt="" />
+                  ENTRE EM CONTATO
+                </button>
+                <button>
+                  <img src={IconPhoto} alt="" />
+                  FALE COM O NOSSO CONSULTOR ONLINE
+                </button>
+              </>
+            )}
           </div>
           <div className="footer__loca">
             <h2>Localização</h2>
@@ -29,8 +38,30 @@ export const Footer = () => {
               <span>+55 11 3090 1039</span>
             </div>
 
-            <img src={LogoFooter} alt="" />
+            {isMobile ? (
+              <></>
+            ) : (
+              <>
+                <img src={LogoFooter} alt="" />
+              </>
+            )}
           </div>
+        </div>
+
+        <div className="footer__mobile-footer">
+          {isMobile ? (
+            <>
+              <button>
+                <img src={IconEmail} alt="" />
+                ENTRE EM CONTATO
+              </button>
+              <button>
+                <img src={IconPhoto} alt="" />
+                FALE COM O NOSSO CONSULTOR ONLINE
+              </button>
+              <img src={LogoFooterMobile} alt="" />
+            </>
+          ) : null}
         </div>
       </footer>
     </>
