@@ -1,4 +1,3 @@
-import React from 'react';
 import ContentLoader from 'react-content-loader'; // Importação do React Content Loader
 import StarRating from '../Star';
 import { Swiper, SwiperSlide } from 'swiper/react';
